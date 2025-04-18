@@ -1,31 +1,24 @@
 package org.example;
 
 import java.util.HashMap;
+import java.util.HashSet;
 
-public class HashMap_Questions {
+public class Union {
 
-    public static void frequency (int []arr)   // checking if frequency of any number is greater than n/3
+    public static void union_two_arrays(int[] arr1, int[] arr2)
     {
-        HashMap <Integer,Integer> map = new HashMap<>();
-        int n = arr.length;
+        //Union of two arrays
 
-        for (int i = 0; i < n; i++) {
-            if (map.containsKey(arr[i]))
-            {
-                map.put(arr[i],map.get(arr[i])+1);
-            }
-            else {
-                map.put(arr[i],1);
-            }
+        HashSet<Integer> set = new HashSet<>();
+
+        for (int num:arr1) {
+            set.add(num);
+        }
+        for (int num: arr2) {
+            set.add(num);
         }
 
-        for (int key :map.keySet()) {
-            if ( map.get(key) >n/3 )
-                System.out.print(key +",");
-
-        }
-
-
+        System.out.println("Size of union : " + set.size());
 
 
     }
@@ -33,9 +26,9 @@ public class HashMap_Questions {
 
     public static void main(String[] args) {
 
-        int [] arr = {1,3,2,5,1,3,1,5,1};
-        int [] arr2 = {1,2};
-        frequency(arr2);
+        int[] arr1 = {7,3,9};
+        int[] arr2 = {6,3,9,2,9,4};
+        union_two_arrays(arr1, arr2);
 
 
     }

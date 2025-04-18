@@ -1,37 +1,30 @@
 package org.example;
 
-import java.util.HashSet;
+public class Highest_element {
 
-public class Intersection {
+    public static void nth_highest_element_array(int[] arr, int nth) {
+        //nth highest element in array
+        for (int i = 0; i < arr.length; i++) {
+            for (int j = i + 1; j < arr.length; j++) {
+                if (arr[i] <= arr[j]) {
+                    int temp = arr[i];
+                    arr[i] = arr[j];
+                    arr[j] = temp;
+                }
 
-    public static void intersection_two_arrays(int[] arr1, int[] arr2)
-    {
-        //Intersection of two arrays
-
-        HashSet<Integer> hashSet = new HashSet<>();
-        for (int num:arr1) {
-            hashSet.add(num);
-
-        }
-        int count =0;
-
-        for (int j : arr2) {
-            if (hashSet.contains(j)) {
-                count++;
-                hashSet.remove(j);
             }
-        }
-        System.out.println(count);
 
+        }
+
+        System.out.println(nth + "th highest element is : " + arr[nth - 1]);
 
     }
 
 
     public static void main(String[] args) {
 
-        int[] arr1 = {7,3,9};
-        int[] arr2 = {6,3,9,2,9,4};
-        intersection_two_arrays(arr1, arr2);
+        int[] arr2 = {6, 3, 10, 2, 9, 4};
+        nth_highest_element_array(arr2, 1);
 
 
     }

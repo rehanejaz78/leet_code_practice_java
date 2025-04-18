@@ -1,25 +1,28 @@
 package org.example;
 
-import java.util.HashMap;
 import java.util.HashSet;
 
-public class Union {
+public class Intersection {
 
-    public static void union_two_arrays(int[] arr1, int[] arr2)
+    public static void intersection_two_arrays(int[] arr1, int[] arr2)
     {
-        //Union of two arrays
+        //Intersection of two arrays
 
-        HashSet<Integer> set = new HashSet<>();
-
+        HashSet<Integer> hashSet = new HashSet<>();
         for (int num:arr1) {
-            set.add(num);
-        }
-        for (int num: arr2) {
-            set.add(num);
-        }
+            hashSet.add(num);
 
-        System.out.println("Size of union : " + set.size());
-        
+        }
+        int count =0;
+
+        for (int j : arr2) {
+            if (hashSet.contains(j)) {
+                count++;
+                hashSet.remove(j);
+            }
+        }
+        System.out.println(count);
+
 
     }
 
@@ -28,7 +31,7 @@ public class Union {
 
         int[] arr1 = {7,3,9};
         int[] arr2 = {6,3,9,2,9,4};
-        union_two_arrays(arr1, arr2);
+        intersection_two_arrays(arr1, arr2);
 
 
     }

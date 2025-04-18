@@ -1,6 +1,7 @@
 package org.example;
 
 
+import java.util.Arrays;
 import java.util.Stack;
 
 public class Palindrome {
@@ -38,6 +39,9 @@ public class Palindrome {
             right --;
         }
 
+        char [] ch = {'c','i','v','i','c'};
+        System.out.println(Arrays.equals(s, ch));
+
 
     }
 
@@ -46,7 +50,7 @@ public class Palindrome {
 
 //        String text = "a Civic a";
 //        verify_palindrome(text);
-        char [] s  =   {'h','e','l','l','o'};
+        char [] s  =   {'c','i','v','i','c'};
         reverseString(s);
 
 
