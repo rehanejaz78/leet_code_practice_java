@@ -5,21 +5,22 @@ import java.util.HashSet;
 
 public class Union {
 
-    public static void union_two_arrays(int[] arr1, int[] arr2)
+    public static int union_two_arrays(int arr1[], int arr2 [])
     {
         //Union of two arrays
 
         HashSet<Integer> set = new HashSet<>();
+        for (int number :arr1) {
+            set.add(number);
 
-        for (int num:arr1) {
-            set.add(num);
         }
-        for (int num: arr2) {
-            set.add(num);
+        for (int number :arr2) {
+            set.add(number);
+
         }
 
-        System.out.println("Size of union : " + set.size());
 
+        return set.size();
 
     }
 
@@ -28,7 +29,8 @@ public class Union {
 
         int[] arr1 = {7,3,9};
         int[] arr2 = {6,3,9,2,9,4};
-        union_two_arrays(arr1, arr2);
+        System.out.println(union_two_arrays(arr1,arr2));
+
 
 
     }

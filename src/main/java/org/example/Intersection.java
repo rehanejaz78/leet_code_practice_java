@@ -7,22 +7,23 @@ public class Intersection {
     public static void intersection_two_arrays(int[] arr1, int[] arr2)
     {
         //Intersection of two arrays
+        int count=0;
 
-        HashSet<Integer> hashSet = new HashSet<>();
-        for (int num:arr1) {
-            hashSet.add(num);
-
+        HashSet<Integer> set = new HashSet<>();
+        for (int num: arr1) {
+            set.add(num);
         }
-        int count =0;
 
-        for (int j : arr2) {
-            if (hashSet.contains(j)) {
+        for (int num: arr2) {
+
+            if (set.contains(num))
+            {
                 count++;
-                hashSet.remove(j);
+                set.remove(num);
             }
         }
-        System.out.println(count);
 
+        System.out.println(count);
 
     }
 

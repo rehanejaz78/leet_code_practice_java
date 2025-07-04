@@ -1,5 +1,7 @@
 package org.example;
 
+import java.util.HashMap;
+
 public class TwoSum {
 
 
@@ -9,32 +11,27 @@ public class TwoSum {
 
     public static int[] twoSum_problem(int[] nums, int target) {
 
-        int[] index = new int[2];
+        HashMap<Integer,Integer> map = new HashMap<>();
+        for (int i = 0; i <nums.length ; i++) {
 
-
-        for (int i = 0; i < nums.length; i++) {
-
-            for (int j = i+1; j < nums.length; j++) {
-                if (nums[i] + nums[j] == target) {
-                    index[0] = i;
-                    index[1] = j;
-                    return index;
-
-                }
+            int diff = target -nums[i];      //9-2 = 7, now we have to look for 7 in array
+            if (map.containsKey(diff)){
+                return new int[]{map.get(diff),i};
 
             }
-
+            else
+                map.put(nums[i],i);
         }
 
 
-        return new int[] {-1, -1};
+        return new int[]{};
     }
 
 
     public static void main(String[] args) {
 
-        int[] num = {3,2,4};
-        int target = 6;
+        int[] num = {2,7,11,15};
+        int target = 9;
 
         for (int indexes : twoSum_problem(num, target)) {
             System.out.println(indexes);

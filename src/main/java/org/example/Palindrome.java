@@ -27,20 +27,34 @@ public class Palindrome {
 
     public static void reverseString(char[] s) {
 
-        int left = 0, right = s.length -1;
+        int left = 0, right = s.length - 1;
 
-        while (left< right)
-        {
-            char temp = s [left];
+        while (left < right) {
+            char temp = s[left];
             s[left] = s[right];
             s[right] = temp;
 
-            left ++;
-            right --;
+            left++;
+            right--;
         }
 
-        char [] ch = {'c','i','v','i','c'};
+        char[] ch = {'c', 'i', 'v', 'i', 'c'};
         System.out.println(Arrays.equals(s, ch));
+
+
+    }
+
+    public static void reverse_recursion(int[] arr, int start, int end) {
+
+        if (start >= end) {
+            return;
+        }
+
+        int temp = arr[start];
+        arr[start] = arr[end];
+        arr[end] = temp;
+
+        reverse_recursion(arr, start + 1, end - 1);
 
 
     }
@@ -50,8 +64,16 @@ public class Palindrome {
 
 //        String text = "a Civic a";
 //        verify_palindrome(text);
-        char [] s  =   {'c','i','v','i','c'};
-        reverseString(s);
+        char[] s = {'c', 'i', 'v', 'i', 'c'};
+        int[] arr = {1, 3, 5, 6, 7};
+//        reverseString(s);
+
+
+        reverse_recursion(arr, 0, arr.length - 1);
+        for (int num : arr) {
+            System.out.println(num);
+
+        }
 
 
     }
